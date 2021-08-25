@@ -1,13 +1,3 @@
 <template>
-  <pdf src="../../images/project_ai.pdf"></pdf>
+  <h1>project AI</h1>
 </template>
-
-<script>
-import pdf from 'vue-pdf';
-
-export default {
-  components: {
-    pdf,
-  },
-};
-</script>

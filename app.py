@@ -17,12 +17,12 @@ app.config.from_object(__name__)
 CORS(app, resources={r'/*': {'origins': '*'}})
 
 '''
-lotify Client 物件初始化
+lotify Client initialize
 '''
-user_token = 'xF8acHmQKhxsPLlYzl06hsxMeohE7Cnr1zqTqm1lNbH'
-client_id = '4SSlmI7OjxzkUqkJCbihHw'
-client_secret = '2uEBrKAguPEapb32rZBou5tJ7BnUQiIKh6WwwAAOchS'
-uri = 'https://127.0.0.1:5000/message/line'
+user_token = ''
+client_id = ''
+client_secret = ''
+uri = ''
 lotify = Client(client_id=client_id, client_secret=client_secret, redirect_uri=uri)
 
 # Create message form model
