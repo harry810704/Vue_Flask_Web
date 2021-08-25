@@ -9,6 +9,7 @@
 // @ is an alias to /src
 import Header from './components/Header.vue';
 
+document.title = 'Harry\'s Page';
 export default {
   name: 'App',
   components: {

