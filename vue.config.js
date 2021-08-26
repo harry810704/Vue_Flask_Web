@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
     publicPath: IS_PRODUCTION
-        ? 'https://harrywebapp.herokuapp.com/'
+        ? '/'
         : '/',
     devServer: {
         proxy: {
