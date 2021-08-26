@@ -7,7 +7,7 @@ from lotify.client import Client
 # configuration
 DEBUG = True
 # instantiate the app
-app = Flask(__name__, static_folder="./dist/static", static_url_path='/')
+app = Flask(__name__, static_folder="./dist", static_url_path='/')
 app.config.from_object(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost/db'
