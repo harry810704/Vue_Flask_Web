@@ -76,7 +76,7 @@ export default {
   },
   methods: {
     sendMessage(newMessage) {
-      const path = 'http://localhost:5000/message';
+      const path = 'https://harrywebapp.herokuapp.com/message';
       axios.post(path, newMessage).then((response) => {
         this.result = response.data.message;
         this.status = response.status;
