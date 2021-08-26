@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from lotify.client import Client
@@ -7,7 +7,7 @@ from lotify.client import Client
 # configuration
 DEBUG = True
 # instantiate the app
-app = Flask(__name__)
+app = Flask(__name__, static_folder="./dist/static", template_folder="./dist")
 app.config.from_object(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost/db'
@@ -32,6 +32,13 @@ lotify = Client(client_id=client_id, client_secret=client_secret, redirect_uri=u
 #     email = db.Column(db.String(120), nullable = False, unique = True)
 #     content = db.Column(db.Text)
 #     date_posted = db.Column(db.DateTime, default=datetime.now)
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
+    if app.debug:
+        return request.get('http://localhost:8080/{}'.format(path)).text
+    return render_template("index.html")
 
 # sanity check route
 @app.route('/message', methods=['GET', 'POST'])
