@@ -35,10 +35,8 @@ lotify = Client(client_id=client_id, client_secret=client_secret, redirect_uri=u
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
-def catch_all(path):
-    if app.debug:
-        return request.get('http://localhost:8080/{}'.format(path)).text
-    return render_template("index.html")
+def index(path):
+    return app.send_static_file("index.html")
 
 # sanity check route
 @app.route('/message', methods=['GET', 'POST'])
