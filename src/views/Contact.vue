@@ -50,7 +50,7 @@
           id="message"
           rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-success">Line Notify</button>
     </form>
   </div>
 </template>
