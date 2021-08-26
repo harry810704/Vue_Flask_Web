@@ -87,7 +87,7 @@ export default {
       })
         .catch((error) => {
           console.log(error);
-          this.result = 'Oops, 500 internal connection error';
+          this.result = 'Oops, Something is wrong... Try again';
         });
       this.showRes = !this.showRes;
       this.timer = setInterval(this.counter, 1000);
